@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",                                                           
+        "SimplexNoise": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/math/SimplexNoise.js"                                                                            
+      }
+    }
+  </script>
+</head>
+<body>
+  <button id="up" style="position:absolute;left:20px">UP</button>
+  <button id="down" style="position:absolute;left:55px">DOWN</button>
+  <button id="left" style="position:absolute;left:113px">LEFT</button>
+  <button id="right" style="position:absolute;left:160px">RIGHT</button>
+  <button id="front" style="position:absolute;left:215px">FRONT</button>
+  <button id="back" style="position:absolute;left:275px">BACK</button>
+  <button id="place" style="position:absolute;left:20px;top:32px">PLACE</button>
+  <button id="break" style="position:absolute;left:77px;top:32px">BREAK</button>
+  <button id="jump" style="position:absolute;left:135px;top:32px">JUMP</button>
+  <button id="exit" style="position:absolute;left:187px;top:32px" onclick="reload()">EXIT & RESET</button>
+  <button id="minecraft_button" onclick="Minecraft()">Minecraft-clone</button>
+  <script>
+  const mbtn = document.getElementById("minecraft_button");
+  const upbtn = document.getElementById("up");
+  const downbtn = document.getElementById("down");
+  const leftbtn = document.getElementById("left");
+  const rightbtn = document.getElementById("right");
+  const frontbtn = document.getElementById("front");
+  const backbtn = document.getElementById("back");
+  const placebtn = document.getElementById("place");
+  const breakbtn = document.getElementById("break");
+  const jumpbtn = document.getElementById("jump");
+  const resetbtn = document.getElementById("exit");
+  upbtn.style.display = "none";
+  downbtn.style.display = "none";
+  leftbtn.style.display = "none";
+  rightbtn.style.display = "none";
+  frontbtn.style.display = "none";
+  backbtn.style.display = "none";
+  placebtn.style.display = "none";
+  breakbtn.style.display = "none";
+  jumpbtn.style.display = "none";
+  resetbtn.style.display = "none";
+  async function reload(){
+    alert("reloading...");
+    location.reload();
+  }
+  async function Minecraft(){
+    try{
+    mbtn.style.display = "none";
+    upbtn.style.display = "block";
+    downbtn.style.display = "block";
+    leftbtn.style.display = "block";
+    rightbtn.style.display = "block";
+    frontbtn.style.display = "block";
+    backbtn.style.display = "block";
+    placebtn.style.display = "block";
+    breakbtn.style.display = "block";
+    jumpbtn.style.display = "block";
+    resetbtn.style.display = "block";
+    await import("./scripts/minecraft.js");
+    }catch(err) {
+      alert(""+err.message);
+    }
+  }
+  </script>
+</body>
+</html>
