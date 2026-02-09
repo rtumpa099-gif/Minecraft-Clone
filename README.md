@@ -16,9 +16,9 @@ just choses a random coordinate to go.
 5)the 'UP' and 'DOWN' buttons are
 supposed to work if the gravity for the
 player is turned off(you can do it by
-directly commenting out on line of code
+directly commenting out one line of code
 from the gravity function).
 
-6)I didn't added the wall collision 
+6)I didn't add the wall collision 
 correctly so u can walk through blocks
 sometimes.
